@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Style Queens | Kids Skincare, Activity Books & Bracelets</title>
+  <meta name="description" content="Style Queens – a cheerful little shop for children: gentle skincare, creative activity books, and colorful bracelets." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fff8fb;
+      --ink:#1f2430;
+      --muted:#6b7280;
+      --brand:#ff5da2;
+      --brand-2:#7c3aed;
+      --accent:#00bcd4;
+      --card:#ffffff;
+      --ring: rgba(124,58,237,.35);
+      --success:#10b981;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Nunito, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--ink);
+      background: radial-gradient(1200px 800px at 10% -10%, #ffe0ef 0%, transparent 60%),
+                  radial-gradient(1200px 800px at 110% 10%, #e7e3ff 0%, transparent 60%),
+                  var(--bg);
+    }
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:0 1rem}
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: saturate(140%) blur(6px);
+      background: color-mix(in oklab, #fff 85%, transparent);
+      border-bottom:1px solid #f0e6f4;
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
+    .brand{display:flex;gap:.6rem;align-items:center;font-weight:800;letter-spacing:.3px}
+    .brand .logo{width:34px;height:34px;border-radius:10px;background: conic-gradient(from 90deg at 50% 50%, var(--brand), var(--brand-2), var(--accent), var(--brand)); display:grid; place-items:center; color:white; font-size:18px; box-shadow:0 6px 18px rgba(124,58,237,.25)}
+    .nav a.btn, button.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border-radius:12px;border:1px solid #e9d7ff;background:#fff;cursor:pointer;font-weight:700}
+    .nav a.link{padding:.4rem .6rem;border-radius:10px}
+    .nav .links{display:flex;gap:.25rem;align-items:center}
+    .pill{display:inline-flex;gap:.5rem;align-items:center;background:#fff;border:1px solid #f1e9f9;border-radius:999px;padding:.25rem .6rem;font-weight:700}
+    .cart-badge{display:inline-grid;place-items:center;min-width:1.25rem;height:1.25rem;border-radius:999px;background:var(--brand-2);color:#fff;font-size:.75rem;padding:0 .25rem}
+
+    .hero{padding:2.2rem 0 1.5rem}
+    .hero-grid{display:grid;gap:1.25rem;grid-template-columns: 1.3fr .7fr;align-items:center}
+    .hero h1{font-size:clamp(1.8rem, 2.2rem + 1vw, 3rem);line-height:1.05;margin:.25rem 0}
+    .hero p{color:var(--muted);max-width:55ch}
+    .hero .cta{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+    .hero-card{background:linear-gradient(135deg, #fff, #fff5fb);border:1px solid #f2e8ff;border-radius:20px;padding:1rem;box-shadow:0 10px 30px rgba(124,58,237,.08)}
+    .illus{aspect-ratio: 4 / 3;border-radius:16px;border:1px dashed #e8dff7;display:grid;place-items:center;font-size:3rem}
+
+    .section{padding:1.25rem 0}
+    .section h2{font-size:1.5rem;margin:0 0 .75rem}
+    .filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.75rem}
+    .chip{border:1px solid #eadff7;background:#fff;border-radius:999px;padding:.35rem .8rem;cursor:pointer;font-weight:700}
+    .chip[aria-pressed="true"]{background:var(--brand-2);color:#fff;border-color:transparent}
+
+    .grid{display:grid;gap:1rem;grid-template-columns:repeat(12,1fr)}
+    .col-4{grid-column: span 4}
+    @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} .col-4{grid-column: span 6} }
+    @media (max-width:640px){ .col-4{grid-column: span 12} }
+
+    .card{background:var(--card);border:1px solid #efe7fb;border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 20px rgba(31,36,48,.05)}
+    .thumb{aspect-ratio: 4/3; background:linear-gradient(135deg,#ffe5f1,#eae6ff); display:grid; place-items:center; font-size:2.25rem}
+    .content{padding:.9rem}
+    .title{font-weight:800;margin:0 0 .2rem}
+    .price{font-weight:800}
+    .muted{color:var(--muted)}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-top:.6rem}
+    .qty{display:flex;align-items:center;gap:.4rem}
+    .qty button{border:1px solid #e6dafc;background:#fff;border-radius:10px;padding:.2rem .5rem;cursor:pointer}
+
+    .notice{margin-top:.6rem;font-size:.9rem;color:var(--muted)}
+
+    footer{margin-top:2rem;padding:1.25rem 0;border-top:1px solid #f0e6f4;color:var(--muted)}
+    .footer-grid{display:grid;gap:1rem;grid-template-columns: 1fr 1fr}
+    @media (max-width:700px){.footer-grid{grid-template-columns:1fr}}
+    .footer small{display:block;margin-top:.25rem}
+
+    /* Accessibility focus */
+    :focus-visible{outline:3px solid var(--ring);outline-offset:2px;border-radius:10px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Main">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">👑</div>
+        <a href="#top" class="link" aria-label="Style Queens home"><span>Style Queens</span></a>
+      </div>
+      <nav class="links" aria-label="Shop sections">
+        <a class="link" href="#skincare">Skincare</a>
+        <a class="link" href="#activity-books">Activity Books</a>
+        <a class="link" href="#bracelets">Bracelets</a>
+        <a class="btn" href="#contact">Contact</a>
+        <span class="pill" aria-live="polite" aria-atomic="true">Cart <span id="cartCount" class="cart-badge" aria-label="items in cart">0</span></span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="pill" aria-hidden="true">🌈 Gentle • Creative • Fun</p>
+          <h1>Cheerful care & creative play for kids</h1>
+          <p>Welcome to <strong>Style Queens</strong>! We make little routines feel royal with <em>gentle skincare</em>, screen‑free <em>activity books</em>, and <em>colourful bracelets</em>. All products are kid‑friendly and parent‑approved.</p>
+          <div class="cta">
+            <a class="btn" href="#skincare">Shop Skincare</a>
+            <a class="btn" href="#activity-books">Shop Activity Books</a>
+            <a class="btn" href="#bracelets">Shop Bracelets</a>
+          </div>
+          <p class="notice">Free UK shipping on orders over £30. 30‑day returns. Dermatologist‑reviewed ingredients.</p>
+        </div>
+        <div class="hero-card">
+          <div class="illus" role="img" aria-label="Playful collage of skincare, books and bracelets">🧴📚🧵</div>
+          <p class="muted" style="margin:.6rem 0 0">Tip: tap a category below to filter products.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" aria-labelledby="shop-heading">
+      <h2 id="shop-heading">Shop Favourites</h2>
+      <div class="filters" role="toolbar" aria-label="Filter products">
+        <button class="chip" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-filter="skincare">Skincare</button>
+        <button class="chip" data-filter="books">Activity Books</button>
+        <button class="chip" data-filter="bracelets">Bracelets</button>
+      </div>
+
+      <div class="grid" id="productGrid">
+        <!-- Skincare -->
+        <article class="card col-4" data-category="skincare" id="skincare">
+          <div class="thumb" aria-hidden="true">🫧</div>
+          <div class="content">
+            <h3 class="title">CloudFoam Face Wash</h3>
+            <p class="muted">Ultra‑gentle, fragrance‑free cleanser for sensitive skin (age 6+).</p>
+            <div class="row">
+              <span class="price">£8.50</span>
+              <div class="qty"><button aria-label="decrease quantity" data-dec>-</button><span aria-live="polite">1</span><button aria-label="increase quantity" data-inc>+</button></div>
+              <button class="btn" data-add>Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card col-4" data-category="skincare">
+          <div class="thumb" aria-hidden="true">🧴</div>
+          <div class="content">
+            <h3 class="title">Rainbow SPF 30</h3>
+            <p class="muted">Mineral sunscreen, no white cast, water‑resistant. Dermatologist‑reviewed.</p>
+            <div class="row">
+              <span class="price">£11.00</span>
+              <div class="qty"><button data-dec>-</button><span>1</span><button data-inc>+</button></div>
+              <button class="btn" data-add>Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card col-4" data-category="skincare">
+          <div class="thumb" aria-hidden="true">💧</div>
+          <div class="content">
+            <h3 class="title">Star Dew Moisturiser</h3>
+            <p class="muted">Lightweight daily lotion with ceramides + oat. Pediatrician‑approved.</p>
+            <div class="row">
+              <span class="price">£9.50</span>
+              <div class="qty"><button data-dec>-</button><span>1</span><button data-inc>+</button></div>
+              <button class="btn" data-add>Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Activity Books -->
+        <article class="card col-4" data-category="books" id="activity-books">
+          <div class="thumb" aria-hidden="true">✏️</div>
+          <div class="content">
+            <h3 class="title">Creativity Quest (80 pages)</h3>
+            <p class="muted">Puzzles, doodles and stories to spark imagination. Printed on recycled paper.</p>
+            <div class="row">
+              <span class="price">£6.00</span>
+              <div class="qty"><button data-dec>-</button><span>1</span><button data-inc>+</button></div>
+              <button class="btn" data-add>Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card col-4" data-category="books">
+          <div class="thumb" aria-hidden="true">🧩</div>
+          <div class="content">
+            <h3 class="title">Puzzle Party (60 pages)</h3>
+            <p class="muted">Crosswords, mazes and spot‑the‑difference made for ages 6–10.</p>
+            <div class="row">
+              <span class="price">£5.50</span>
+              <div class="qty"><button data-dec>-</button><span>1</span><button data-inc>+</button></div>
+              <button class="btn" data-add>Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bracelets -->
+        <article class="card col-4" data-category="bracelets" id="bracelets">
+          <div class="thumb" aria-hidden="true">💖</div>
+          <div class="content">
+            <h3 class="title">Heart Charms Bracelet</h3>
+            <p class="muted">Elastic bracelet with pastel beads. Nickel‑free hardware.</p>
+            <div class="row">
+              <span class="price">£4.00</span>
+              <div class="qty"><button data-dec>-</button><span>1</span><button data-inc>+</button></div>
+              <button class="btn" data-add>Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card col-4" data-category="bracelets">
+          <div class="thumb" aria-hidden="true">🌟</div>
+          <div class="content">
+            <h3 class="title">Star Friends Bracelets (2‑pack)</h3>
+            <p class="muted">Share with a bestie! Soft stretch cord; one size fits most.</p>
+            <div class="row">
+              <span class="price">£7.00</span>
+              <div class="qty"><button data-dec>-</button><span>1</span><button data-inc>+</button></div>
+              <button class="btn" data-add>Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="notice">Safety: All items are lab‑tested to EU/UK standards. Skincare is free from parabens, SLS and common allergens. Bracelets contain small parts—use with care for children under 3.</p>
+    </section>
+
+    <section class="section container" id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact & Info</h2>
+      <div class="footer-grid">
+        <div>
+          <p><strong>Questions?</strong> Email us at <a href="mailto:hello@stylequeens.example">hello@stylequeens.example</a> or call 01234 567890 (Mon–Fri, 9am–5pm).</p>
+          <small>Registered in the UK. VAT included where applicable.</small>
+        </div>
+        <form id="newsletter" aria-label="Subscribe to newsletter">
+          <label for="email">Get 10% off your first order</label><br />
+          <input id="email" name="email" type="email" placeholder="you@example.com" required style="padding:.6rem .8rem;border:1px solid #e6dafc;border-radius:12px;width:100%;max-width:320px;margin:.4rem 0" />
+          <button class="btn" type="submit">Subscribe</button>
+          <small class="muted">We respect your privacy and never share emails.</small>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong>Style Queens</strong>
+          <small>© <span id="year"></span> Style Queens Ltd.</small>
+        </div>
+        <div>
+          <small><a href="#">Shipping & Returns</a> · <a href="#">Privacy</a> · <a href="#">Terms</a></small>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple cart counter + quantity controls
+    const cartCount = document.getElementById('cartCount');
+    let cart = 0;
+    document.querySelectorAll('[data-add]').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const qty = Number(btn.parentElement.querySelector('span').textContent) || 1;
+        cart += qty;
+        cartCount.textContent = cart;
+        btn.textContent = 'Added!';
+        btn.style.background = 'linear-gradient(135deg,#f0f9ff,#ecfeff)';
+        setTimeout(() => { btn.textContent = 'Add to cart'; btn.style.background = '#fff'; }, 800);
+      });
+    });
+    document.querySelectorAll('[data-inc]').forEach(b=>b.addEventListener('click',()=>{
+      const s=b.parentElement.querySelector('span'); s.textContent = Number(s.textContent)+1;
+    }));
+    document.querySelectorAll('[data-dec]').forEach(b=>b.addEventListener('click',()=>{
+      const s=b.parentElement.querySelector('span'); s.textContent = Math.max(1, Number(s.textContent)-1);
+    }));
+
+    // Filter chips
+    const chips = document.querySelectorAll('.chip');
+    const grid = document.getElementById('productGrid');
+    chips.forEach(chip=>{
+      chip.addEventListener('click',()=>{
+        chips.forEach(c=>c.setAttribute('aria-pressed','false'));
+        chip.setAttribute('aria-pressed','true');
+        const f = chip.dataset.filter;
+        grid.querySelectorAll('.card').forEach(card=>{
+          const show = f==='all' || card.dataset.category===f;
+          card.style.display = show ? 'flex' : 'none';
+        });
+      });
+    });
+
+    // Newsletter (demo only)
+    document.getElementById('newsletter').addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const email = e.target.email.value.trim();
+      if(!email){return}
+      alert('Thanks! A 10% welcome code is on its way to '+ email + ' (demo).');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
